@@ -1,0 +1,226 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================
+   GLOBAL BASE STYLES
+========================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: "Metropolis", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+/* =========================
+   METROPOLIS FONT FACES
+========================= */
+
+@font-face {
+  font-family: "Metropolis";
+  src: url("./assets/fonts/Metropolis-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Metropolis";
+  src: url("./assets/fonts/Metropolis-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Metropolis";
+  src: url("./assets/fonts/Metropolis-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Metropolis";
+  src: url("./assets/fonts/Metropolis-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =========================
+   NEON / PORTFOLIO UTILITIES
+========================= */
+
+@layer components {
+  .neon-text {
+    color: #00ff66;
+  }
+
+  .neon-border {
+    border: 1px solid rgba(0, 255, 102, 0.4);
+  }
+
+  .neon-glow {
+    box-shadow: 0 0 12px rgba(0, 255, 102, 0.6);
+  }
+
+  .neon-glow-strong {
+    box-shadow: 0 0 24px rgba(0, 255, 102, 0.85);
+  }
+
+  .neon-hover {
+    transition: color 0.2s ease;
+  }
+
+  .neon-hover:hover {
+    color: #00ff66;
+  }
+}
+/* ============================= */
+/* iOS LIQUID GLASS NAVBAR       */
+/* ============================= */
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(26px) saturate(180%);
+  -webkit-backdrop-filter: blur(26px) saturate(180%);
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+/* LINKS */
+.glass-link {
+  position: relative;
+  padding: 8px 18px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  border-radius: 9999px;
+  z-index: 2;
+  transition: color 0.25s ease;
+}
+
+.glass-link:hover {
+  color: #00ff66;
+}
+
+.glass-link-active {
+  color: #00ff66;
+}
+
+/* FLOATING LIQUID PILL */
+.glass-indicator {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  height: 36px;
+  transform: translateY(-50%);
+  border-radius: 9999px;
+
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(22px) saturate(180%);
+  -webkit-backdrop-filter: blur(22px) saturate(180%);
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+
+  z-index: 1;
+}
+
+/* MOBILE MENU */
+.glass-mobile {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(26px) saturate(180%);
+  -webkit-backdrop-filter: blur(26px) saturate(180%);
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.glass-mobile-link {
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.glass-mobile-active {
+  background: rgba(255, 255, 255, 0.18);
+  color: #00ff66;
+}
+/* FLOATING SOCIAL GLASS ICONS */
+.glass-social {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+  transition: all 0.25s ease;
+}
+
+.glass-social:hover {
+  color: #00ff66;
+  transform: translateY(-2px);
+}
+.hero-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;          /* 🔑 smaller */
+  border-radius: 12px;
+  font-size: 12px;            /* 🔑 mobile friendly */
+  font-weight: 500;
+  line-height: 1;
+  transition: all 0.25s ease;
+}
+
+@media (min-width: 640px) {
+  .hero-btn {
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+}
+
+.hero-btn.primary {
+  background: #00ff66;
+  color: black;
+}
+
+.hero-btn.primary:hover {
+  box-shadow: 0 0 16px rgba(0, 255, 102, 0.7);
+}
+
+.hero-btn.outline {
+  border: 1px solid #00ff66;
+  color: #00ff66;
+}
+
+.hero-btn.outline:hover {
+  background: rgba(0, 255, 102, 0.12);
+}
