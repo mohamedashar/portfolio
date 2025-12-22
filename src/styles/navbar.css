@@ -1,11 +1,13 @@
 .glass-nav {
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-
-  /* 🔑 CRITICAL FIX */
-  isolation: isolate;
+  background:
+    linear-gradient(
+      to right,
+      rgba(0, 255, 102, 0.08),
+      rgba(0, 0, 0, 0.55)
+    );
+  border: 1px solid rgba(255,255,255,0.12);
 }
+
 
 
 .glass-link {
