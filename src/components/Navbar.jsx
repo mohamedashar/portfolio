@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import logo from "../assets/logo.png";
-import "../styles/navbar.css";
+
 
 const links = [
   { name: "HOME", id: "home" },

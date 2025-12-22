@@ -4,6 +4,8 @@ import Beams from "../components/Beams";
 import "../components/Beams.css";
 import BlurText from "../components/BlurText";
 import TextType from "../components/TextType";
+import SplitText from "../components/SplitText";
+
 
 export default function Hero() {
   return (
@@ -43,8 +45,8 @@ export default function Hero() {
         <TextType
           text={["Welcome to my portfolio"]}
           typingSpeed={70}
-          pauseDuration={1500}
-          showCursor={false}
+          pauseDuration={3000}
+          showCursor={true}
           className="text-sm sm:text-base text-white tracking-wide"
         />
 
@@ -69,14 +71,20 @@ export default function Hero() {
 
 
         {/* ROLE */}
-        <motion.p
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="text-neon text-sm sm:text-base"
-        >
-          Full Stack Developer · UI/UX · Cybersecurity
-        </motion.p>
+        <SplitText
+  text="Full Stack Developer · UI/UX · Cybersecurity"
+  className="text-neon text-sm sm:text-base text-center"
+  delay={40}
+  duration={0.6}
+  ease="power3.out"
+  splitType="chars"
+  from={{ opacity: 0, y: 16 }}
+  to={{ opacity: 1, y: 0 }}
+  threshold={0.1}
+  rootMargin="-100px"
+  textAlign="center"
+/>
+
 
         {/* PREMIUM BUTTONS */}
         <motion.div
