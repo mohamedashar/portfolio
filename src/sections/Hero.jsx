@@ -91,7 +91,7 @@ export default function Hero() {
         >
           {/* DOWNLOAD CV */}
           <motion.a
-            href="/Mohamed_Ashar_CV.pdf"
+            href="/ASHAR_CV.pdf"
             download="Mohamed_Ashar_CV.pdf"
             whileHover={{ scale: 1.06 }}
             whileTap={{ scale: 0.95 }}
