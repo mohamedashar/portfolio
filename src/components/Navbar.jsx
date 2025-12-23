@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import logo from "../assets/logo.png";
 
-
 const links = [
   { name: "HOME", id: "home" },
   { name: "ABOUT", id: "about" },
   { name: "SKILLS", id: "skills" },
   { name: "PROJECTS", id: "projects" },
+  { name: "EDUCATION", id: "education" },
   { name: "CERTIFICATIONS", id: "certifications" },
   { name: "CONTACT", id: "contact" },
 ];
@@ -57,12 +57,12 @@ export default function Navbar() {
     <nav className="fixed top-4 inset-x-0 z-50 flex justify-center px-4">
       <div className="glass-nav w-full max-w-6xl flex items-center px-6 py-3">
         {/* LOGO */}
-        <img src={logo} alt="Ashar" className="h-7 md:h-8 w-auto" />
+        <img src={logo} alt="Ashar" className="h-7 lg:h-8 w-auto" />
 
-        {/* DESKTOP NAV */}
+        {/* DESKTOP NAV (ONLY ≥ 1024px) */}
         <div
           ref={navRef}
-          className="relative hidden md:flex items-center gap-1 ml-auto"
+          className="relative hidden lg:flex items-center gap-1 ml-auto"
         >
           {/* LIQUID INDICATOR */}
           <span ref={indicatorRef} className="glass-indicator" />
@@ -81,18 +81,18 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* MOBILE BUTTON */}
+        {/* MOBILE / TABLET BUTTON */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden ml-auto text-white text-xl"
+          className="lg:hidden ml-auto text-white text-xl"
         >
           ☰
         </button>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* MOBILE / TABLET MENU */}
       {open && (
-        <div className="md:hidden absolute top-full mt-3 w-[94%] max-w-md glass-mobile px-4 py-4">
+        <div className="lg:hidden absolute top-full mt-3 w-[94%] max-w-md glass-mobile px-4 py-4">
           <ul className="flex flex-col gap-2">
             {links.map(link => (
               <li key={link.id}>

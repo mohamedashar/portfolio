@@ -13,6 +13,7 @@ import {
   FaReact,
   FaNodeJs,
   FaFigma,
+  FaJs,
 } from "react-icons/fa";
 
 import {
@@ -32,6 +33,7 @@ const skillsData = [
   {
     title: "Programming Languages",
     items: [
+      { name: "JavaScript", icon: FaJs },
       { name: "Python", icon: FaPython },
       { name: "Java", icon: FaJava },
       { name: "C", icon: SiC },
