@@ -36,7 +36,7 @@ export default function Projects() {
       <div className="absolute inset-0 z-0">
         <Particles
           particleColors={["#00ff66"]}
-          particleCount={900}
+          particleCount={150}
           particleSpread={12}
           speed={0.6}
           particleBaseSize={90}
