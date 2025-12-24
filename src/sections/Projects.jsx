@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Shuffle from "../components/Shuffle";
-import Particles from "../components/Particles";
 
 const projects = [
   {
@@ -32,20 +31,6 @@ export default function Projects() {
       id="projects"
       className="relative min-h-screen bg-black px-4 pt-28 pb-24 text-white overflow-hidden"
     >
-      {/* PARTICLES BACKGROUND — DESKTOP ONLY */}
-      <div className="absolute inset-0 z-0 hidden md:block">
-        <Particles
-          particleColors={["#00ff66"]}
-          particleCount={150}
-          particleSpread={12}
-          speed={0.6}
-          particleBaseSize={90}
-          moveParticlesOnHover={false}
-          alphaParticles={true}
-          disableRotation={false}
-        />
-      </div>
-
       {/* SOFT PREMIUM GREEN OVERLAY */}
       <div className="absolute inset-0 z-[1] bg-[radial-gradient(ellipse_at_top,rgba(0,255,102,0.08),transparent_60%)]" />
 
@@ -78,6 +63,7 @@ export default function Projects() {
             >
               <div className="relative rounded-3xl p-[1px] bg-gradient-to-r from-[#00ff66]/30 via-[#00ff66]/10 to-transparent">
                 <div className="rounded-3xl bg-[#0b0f0d]/80 border border-[#00ff66]/20 px-7 py-6 transition-all duration-300 group-hover:border-[#00ff66]/45 group-hover:shadow-[0_30px_80px_rgba(0,255,102,0.18)]">
+                  
                   <h3 className="text-lg sm:text-xl font-semibold mb-2">
                     {project.title}
                   </h3>
@@ -102,6 +88,7 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
+
                 </div>
               </div>
             </motion.div>
@@ -127,3 +114,4 @@ export default function Projects() {
     </section>
   );
 }
+  

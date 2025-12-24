@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Particles from "../components/Particles";
 import FloatingLines from "../components/FloatingLines";
 import FuzzyText from "../components/FuzzyText";
 import { ExternalLink, ShieldCheck } from "lucide-react";
@@ -64,20 +63,6 @@ export default function Certifications() {
 
       {/* DARK OVERLAY */}
       <div className="absolute inset-0 z-[1] bg-black/70" />
-
-      {/* PARTICLES — DESKTOP ONLY */}
-      <div className="absolute inset-0 z-10 hidden md:block">
-        <Particles
-          particleColors={["#00ff66"]}
-          particleCount={140}
-          particleSpread={12}
-          speed={0.06}
-          particleBaseSize={90}
-          moveParticlesOnHover={false}
-          alphaParticles={true}
-          disableRotation={false}
-        />
-      </div>
 
       {/* CONTENT */}
       <div className="relative z-20 max-w-6xl mx-auto">
