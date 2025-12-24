@@ -45,10 +45,10 @@ export default function Certifications() {
   return (
     <section
       id="certifications"
-      className="relative min-h-screen px-4 pt-28 pb-24 overflow-hidden text-white"
+      className="relative min-h-screen px-4 pt-28 pb-24 overflow-hidden text-white bg-black"
     >
-      {/* FLOATING LINES BACKGROUND */}
-      <div className="absolute inset-0 z-0">
+      {/* FLOATING LINES — DESKTOP ONLY */}
+      <div className="absolute inset-0 z-0 hidden md:block">
         <FloatingLines
           enabledWaves={["top", "middle", "bottom"]}
           lineCount={[10, 15, 20]}
@@ -91,12 +91,12 @@ export default function Certifications() {
           {certifications.map((cert, index) => (
             <motion.div key={index} variants={cardVariants}>
               <div className="group relative h-full rounded-[2rem] p-[1px] bg-gradient-to-br from-[#00ff66]/40 via-[#00ff66]/10 to-transparent">
-                <div className="relative h-full rounded-[2rem] bg-black/60 backdrop-blur-2xl border border-white/10 p-7 flex flex-col transition-all duration-300 group-hover:border-[#00ff66]/40 group-hover:shadow-[0_40px_120px_rgba(0,255,102,0.25)]">
+                <div className="relative h-full rounded-[2rem] bg-black/70 border border-white/10 p-7 flex flex-col transition-all duration-300 group-hover:border-[#00ff66]/40 group-hover:shadow-[0_40px_120px_rgba(0,255,102,0.25)]">
                   
                   {/* ICON + ISSUER */}
                   <div className="mb-5 flex items-center gap-3">
                     <div className="w-11 h-11 rounded-xl bg-[#00ff66]/15 flex items-center justify-center">
-                      <ShieldCheck className="w-6 h-6 text-neon" />
+                      <ShieldCheck className="w-6 h-6 text-[#00ff66]" />
                     </div>
 
                     <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#00ff66]/15 text-[#00ff66] border border-[#00ff66]/30">
