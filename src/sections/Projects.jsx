@@ -32,8 +32,8 @@ export default function Projects() {
       id="projects"
       className="relative min-h-screen bg-black px-4 pt-28 pb-24 text-white overflow-hidden"
     >
-      {/* PARTICLES BACKGROUND */}
-      <div className="absolute inset-0 z-0">
+      {/* PARTICLES BACKGROUND — DESKTOP ONLY */}
+      <div className="absolute inset-0 z-0 hidden md:block">
         <Particles
           particleColors={["#00ff66"]}
           particleCount={150}
@@ -78,7 +78,6 @@ export default function Projects() {
             >
               <div className="relative rounded-3xl p-[1px] bg-gradient-to-r from-[#00ff66]/30 via-[#00ff66]/10 to-transparent">
                 <div className="rounded-3xl bg-[#0b0f0d]/80 border border-[#00ff66]/20 px-7 py-6 transition-all duration-300 group-hover:border-[#00ff66]/45 group-hover:shadow-[0_30px_80px_rgba(0,255,102,0.18)]">
-
                   <h3 className="text-lg sm:text-xl font-semibold mb-2">
                     {project.title}
                   </h3>
@@ -103,7 +102,6 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
-
                 </div>
               </div>
             </motion.div>

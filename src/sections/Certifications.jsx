@@ -9,7 +9,7 @@ import { ExternalLink, ShieldCheck } from "lucide-react";
 const certifications = [
   {
     title: "Ethical Hacker",
-    issuer: "Cisco",
+    issuer: "Cisco Networking Academy",
     description:
       "Focuses on ethical hacking methodologies, penetration testing basics, vulnerability analysis, and security best practices.",
     verify:
@@ -65,8 +65,8 @@ export default function Certifications() {
       {/* DARK OVERLAY */}
       <div className="absolute inset-0 z-[1] bg-black/70" />
 
-      {/* PARTICLES */}
-      <div className="absolute inset-0 z-10">
+      {/* PARTICLES — DESKTOP ONLY */}
+      <div className="absolute inset-0 z-10 hidden md:block">
         <Particles
           particleColors={["#00ff66"]}
           particleCount={140}
@@ -81,7 +81,7 @@ export default function Certifications() {
 
       {/* CONTENT */}
       <div className="relative z-20 max-w-6xl mx-auto">
-        {/* ✅ FIXED FUZZY HEADING */}
+        {/* HEADING */}
         <div className="mb-20 flex justify-center overflow-hidden">
           <div className="whitespace-nowrap scale-[0.78] sm:scale-100">
             <FuzzyText
