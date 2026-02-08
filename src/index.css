@@ -83,30 +83,36 @@ body {
   }
 }
 /* ============================= */
-/* iOS LIQUID GLASS NAVBAR       */
+/* PREMIUM GLASS NAVBAR (FIXED)  */
 /* ============================= */
 
 .glass-nav {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(26px) saturate(180%);
-  -webkit-backdrop-filter: blur(26px) saturate(180%);
+  background: rgba(10, 16, 14, 0.65); /* Dark transparent base */
+  
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+
   border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  border: 1px solid rgba(0, 255, 102, 0.25);
 
   box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    0 10px 35px rgba(0, 255, 102, 0.15),
+    inset 0 0 0 1px rgba(255,255,255,0.05);
+
+  transition: all 0.3s ease;
 }
 
-/* LINKS */
+/* NAV LINKS */
 .glass-link {
   position: relative;
   padding: 8px 18px;
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.7);
   border-radius: 9999px;
   z-index: 2;
-  transition: color 0.25s ease;
+
+  transition: all 0.25s ease;
 }
 
 .glass-link:hover {
@@ -117,69 +123,90 @@ body {
   color: #00ff66;
 }
 
-/* FLOATING LIQUID PILL */
+
+/* ACTIVE INDICATOR */
 .glass-indicator {
   position: absolute;
-  top: 0%;
+  top: 5%;
   left: 0;
-  height: 36px;
+
+  height: 32px;
+
   transform: translateY(-50%);
   border-radius: 9999px;
 
-  background: rgba(255, 255, 255, 0.22);
-  backdrop-filter: blur(22px) saturate(180%);
-  -webkit-backdrop-filter: blur(22px) saturate(180%);
+  background: rgba(0, 255, 102, 0.22);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 
   box-shadow:
-    0 6px 18px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    0 4px 14px rgba(0, 255, 102, 0.35),
+    inset 0 0 0 1px rgba(255,255,255,0.25);
 
   transition:
-    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-    width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 
   z-index: 1;
 }
 
+
+
 /* MOBILE MENU */
 .glass-mobile {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(26px) saturate(180%);
-  -webkit-backdrop-filter: blur(26px) saturate(180%);
+  background: rgba(10, 16, 14, 0.85);
+
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+
   border-radius: 22px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  border: 1px solid rgba(0, 255, 102, 0.25);
+
+  box-shadow:
+    0 15px 40px rgba(0, 255, 102, 0.2);
 }
 
 .glass-mobile-link {
   padding: 10px 14px;
   border-radius: 14px;
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.75);
+
+  color: rgba(255, 255, 255, 0.7);
+
+  transition: all 0.25s ease;
 }
 
 .glass-mobile-active {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(0, 255, 102, 0.15);
   color: #00ff66;
 }
-/* FLOATING SOCIAL GLASS ICONS */
+
+
+/* SOCIAL ICONS */
 .glass-social {
   width: 44px;
   height: 44px;
+
   border-radius: 14px;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  background: rgba(10, 16, 14, 0.7);
 
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+
+  border: 1px solid rgba(0, 255, 102, 0.25);
+
   color: white;
 
   box-shadow:
-    0 10px 24px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    0 8px 24px rgba(0, 255, 102, 0.2),
+    inset 0 0 0 1px rgba(255,255,255,0.05);
 
   transition: all 0.25s ease;
 }
@@ -188,6 +215,7 @@ body {
   color: #00ff66;
   transform: translateY(-2px);
 }
+
 .hero-btn {
   display: flex;
   align-items: center;
