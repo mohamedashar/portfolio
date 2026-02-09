@@ -20,7 +20,8 @@ const certifications = [
     description:
       "Introduces cybersecurity concepts including threat landscapes, security operations, risk management, and defensive strategies.",
     verify:
-      "https://www.credly.com/badges/25b81985-766f-4cbe-aafb-61dce4053ec2/public_url",
+          "https://www.credly.com/badges/99bcbd16-82e6-4d0d-9087-c3b5df8b779d/public_url",
+
   },
   {
     title: "IBM Data Privacy Fundamentals",
@@ -28,7 +29,8 @@ const certifications = [
     description:
       "Covers core principles of data privacy, regulatory frameworks, data protection practices, and risk awareness in modern digital environments.",
     verify:
-      "https://www.credly.com/badges/99bcbd16-82e6-4d0d-9087-c3b5df8b779d/public_url",
+          "https://www.credly.com/badges/25b81985-766f-4cbe-aafb-61dce4053ec2/public_url",
+
   },
 ];
 
