@@ -21,7 +21,8 @@ const projects = [
     title: "Drone Detection System",
     description:
       "A real-time drone detection web application using image processing and object detection techniques with a responsive monitoring dashboard.",
-    tech: ["Computer Vision", "Object Detection", "Web App"],
+    tech: ["Computer Vision", "Object Detection", "YOLO"],
+    github: "https://github.com/mohamedashar/Drone-Detection-System",
   },
 ];
 
@@ -78,7 +79,7 @@ export default function Projects() {
                     </p>
                   )}
 
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((t, i) => (
                       <span
                         key={i}
@@ -88,6 +89,21 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
+
+                  {/* 🔥 PREMIUM GitHub Button */}
+                  {project.github && (
+                    <motion.a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.06 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="relative inline-flex items-center gap-2 px-5 py-2 text-xs font-medium rounded-full text-black bg-gradient-to-r from-[#00ff66] to-[#00cc55] transition-all duration-300 shadow-[0_0_18px_rgba(0,255,102,0.6)] hover:shadow-[0_0_28px_rgba(0,255,102,0.9)]"
+                    >
+                      View on GitHub
+                      <span className="text-sm">↗</span>
+                    </motion.a>
+                  )}
 
                 </div>
               </div>
@@ -114,4 +130,3 @@ export default function Projects() {
     </section>
   );
 }
-  
