@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Shuffle from "../components/Shuffle";
+import { InteractiveHoverButton } from "../components/ui/interactive-hover-button";
 
 const projects = [
   {
@@ -32,10 +33,9 @@ export default function Projects() {
       id="projects"
       className="relative min-h-screen bg-black px-4 pt-28 pb-24 text-white overflow-hidden"
     >
-      {/* SOFT PREMIUM GREEN OVERLAY */}
-      <div className="absolute inset-0 z-[1] bg-[radial-gradient(ellipse_at_top,rgba(0,255,102,0.08),transparent_60%)]" />
+      {/* Soft Green Background Glow */}
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(0,255,102,0.08),transparent_60%)]" />
 
-      {/* CONTENT */}
       <div className="relative z-10">
         {/* HEADING */}
         <div className="mb-14 text-center">
@@ -50,8 +50,8 @@ export default function Projects() {
           />
         </div>
 
-        {/* PROJECT LIST */}
-        <div className="max-w-5xl mx-auto flex flex-col gap-8">
+        {/* PROJECT CARDS */}
+        <div className="max-w-5xl mx-auto flex flex-col gap-10">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -60,12 +60,11 @@ export default function Projects() {
               viewport={{ once: true }}
               transition={{ duration: 0.45, ease: "easeOut" }}
               whileHover={{ y: -6 }}
-              className="group"
             >
               <div className="relative rounded-3xl p-[1px] bg-gradient-to-r from-[#00ff66]/30 via-[#00ff66]/10 to-transparent">
-                <div className="rounded-3xl bg-[#0b0f0d]/80 border border-[#00ff66]/20 px-7 py-6 transition-all duration-300 group-hover:border-[#00ff66]/45 group-hover:shadow-[0_30px_80px_rgba(0,255,102,0.18)]">
-                  
-                  <h3 className="text-lg sm:text-xl font-semibold mb-2">
+                <div className="rounded-3xl bg-[#0b0f0d]/80 border border-[#00ff66]/20 px-7 py-7 transition-all duration-300 hover:border-[#00ff66]/45 hover:shadow-[0_30px_80px_rgba(0,255,102,0.18)]">
+
+                  <h3 className="text-lg sm:text-xl font-semibold mb-3">
                     {project.title}
                   </h3>
 
@@ -79,7 +78,8 @@ export default function Projects() {
                     </p>
                   )}
 
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  {/* TECH STACK */}
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {project.tech.map((t, i) => (
                       <span
                         key={i}
@@ -90,19 +90,27 @@ export default function Projects() {
                     ))}
                   </div>
 
-                  {/* 🔥 PREMIUM GitHub Button */}
+                  {/* GITHUB BUTTON */}
                   {project.github && (
-                    <motion.a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.06 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="relative inline-flex items-center gap-2 px-5 py-2 text-xs font-medium rounded-full text-black bg-gradient-to-r from-[#00ff66] to-[#00cc55] transition-all duration-300 shadow-[0_0_18px_rgba(0,255,102,0.6)] hover:shadow-[0_0_28px_rgba(0,255,102,0.9)]"
-                    >
-                      View on GitHub
-                      <span className="text-sm">↗</span>
-                    </motion.a>
+                    <div className="flex justify-start">
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <InteractiveHoverButton
+                          className="
+                            border border-[#00ff66]/40 
+                            text-white 
+                            hover:bg-[#00ff66] 
+                            hover:text-black 
+                            transition-all duration-300
+                          "
+                        >
+                          View on GitHub
+                        </InteractiveHoverButton>
+                      </a>
+                    </div>
                   )}
 
                 </div>
@@ -115,15 +123,15 @@ export default function Projects() {
       {/* HEADING STYLE */}
       <style>{`
         .projects-heading {
-          font-size: 3.58rem;
+          font-size: 3.2rem;
           font-weight: 700;
-          letter-spacing: 0em;
+          letter-spacing: 0.05em;
           color: #00ff66;
         }
 
         @media (max-width: 768px) {
           .projects-heading {
-            font-size: 1.9rem;
+            font-size: 2rem;
           }
         }
       `}</style>
