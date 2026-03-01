@@ -43,7 +43,7 @@ export default function Hero() {
         {/* WELCOME TEXT */}
         <TextType
           text={["Welcome to my portfolio"]}
-          typingSpeed={70}
+          typingSpeed={5}
           pauseDuration={3000}
           showCursor={true}
           className="text-xs sm:text-base text-white tracking-wide"
