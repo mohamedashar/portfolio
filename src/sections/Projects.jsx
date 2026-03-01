@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Shuffle from "../components/Shuffle";
 import { InteractiveHoverButton } from "../components/ui/interactive-hover-button";
+import ElectricBorder from "../components/ElectricBorder"; // ✅ Added
 
 const projects = [
   {
@@ -61,60 +62,69 @@ export default function Projects() {
               transition={{ duration: 0.45, ease: "easeOut" }}
               whileHover={{ y: -6 }}
             >
-              <div className="relative rounded-3xl p-[1px] bg-gradient-to-r from-[#00ff66]/30 via-[#00ff66]/10 to-transparent">
-                <div className="rounded-3xl bg-[#0b0f0d]/80 border border-[#00ff66]/20 px-7 py-7 transition-all duration-300 hover:border-[#00ff66]/45 hover:shadow-[0_30px_80px_rgba(0,255,102,0.18)]">
+              {/* ✅ Electric Border Added Here */}
+              <ElectricBorder
+                color="#00ff55"
+                speed={0.6}
+                chaos={0.09}
+                borderRadius={24}
+                style={{ borderRadius: 24 }}
+              >
+                <div className="relative rounded-3xl p-[1px] bg-gradient-to-r from-[#00ff66]/q0 via-[#00ff66]/10 to-transparent">
+                  <div className="rounded-3xl bg-[#0b0f0d]/80 border border-[#00ff66]/20 px-7 py-7 transition-all duration-300 hover:border-[#00ff66]/45 hover:shadow-[0_30px_80px_rgba(0,255,102,0.18)]">
 
-                  <h3 className="text-lg sm:text-xl font-semibold mb-3">
-                    {project.title}
-                  </h3>
+                    <h3 className="text-lg sm:text-xl font-semibold mb-3">
+                      {project.title}
+                    </h3>
 
-                  <p className="text-sm sm:text-base text-white/70 leading-relaxed mb-4">
-                    {project.description}
-                  </p>
-
-                  {project.highlight && (
-                    <p className="text-sm text-[#00ff66] font-medium mb-4">
-                      {project.highlight}
+                    <p className="text-sm sm:text-base text-white/70 leading-relaxed mb-4">
+                      {project.description}
                     </p>
-                  )}
 
-                  {/* TECH STACK */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tech.map((t, i) => (
-                      <span
-                        key={i}
-                        className="px-3 py-1 text-xs rounded-full bg-black/60 border border-[#00ff66]/30 text-[#00ff66]"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
+                    {project.highlight && (
+                      <p className="text-sm text-[#00ff66] font-medium mb-4">
+                        {project.highlight}
+                      </p>
+                    )}
 
-                  {/* GITHUB BUTTON */}
-                  {project.github && (
-                    <div className="flex justify-start">
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <InteractiveHoverButton
-                          className="
-                            border border-[#00ff66]/40 
-                            text-white 
-                            hover:bg-[#00ff66] 
-                            hover:text-black 
-                            transition-all duration-300
-                          "
+                    {/* TECH STACK */}
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.tech.map((t, i) => (
+                        <span
+                          key={i}
+                          className="px-3 py-1 text-xs rounded-full bg-black/60 border border-[#00ff66]/30 text-[#00ff66]"
                         >
-                          View on GitHub
-                        </InteractiveHoverButton>
-                      </a>
+                          {t}
+                        </span>
+                      ))}
                     </div>
-                  )}
 
+                    {/* GITHUB BUTTON */}
+                    {project.github && (
+                      <div className="flex justify-start">
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <InteractiveHoverButton
+                            className="
+                              border border-[#00ff66]/40 
+                              text-white 
+                              hover:bg-[#00ff66] 
+                              hover:text-black 
+                              transition-all duration-300
+                            "
+                          >
+                            View on GitHub
+                          </InteractiveHoverButton>
+                        </a>
+                      </div>
+                    )}
+
+                  </div>
                 </div>
-              </div>
+              </ElectricBorder>
             </motion.div>
           ))}
         </div>
