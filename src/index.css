@@ -151,6 +151,19 @@ body {
   z-index: 1;
 }
 
+@keyframes line-shadow {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% -100%;
+  }
+}
+
+.line-shadow-animate::after {
+  animation: line-shadow 20s linear infinite;
+}
+
 
 
 /* MOBILE MENU */

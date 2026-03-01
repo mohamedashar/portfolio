@@ -3,7 +3,8 @@
 import { motion } from "framer-motion";
 import FloatingLines from "../components/FloatingLines";
 import FuzzyText from "../components/FuzzyText";
-import { ExternalLink, ShieldCheck } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
+import { InteractiveHoverButton } from "../components/ui/interactive-hover-button";
 
 const certifications = [
   {
@@ -20,8 +21,7 @@ const certifications = [
     description:
       "Introduces cybersecurity concepts including threat landscapes, security operations, risk management, and defensive strategies.",
     verify:
-          "https://www.credly.com/badges/99bcbd16-82e6-4d0d-9087-c3b5df8b779d/public_url",
-
+      "https://www.credly.com/badges/99bcbd16-82e6-4d0d-9087-c3b5df8b779d/public_url",
   },
   {
     title: "IBM Data Privacy Fundamentals",
@@ -29,8 +29,7 @@ const certifications = [
     description:
       "Covers core principles of data privacy, regulatory frameworks, data protection practices, and risk awareness in modern digital environments.",
     verify:
-          "https://www.credly.com/badges/25b81985-766f-4cbe-aafb-61dce4053ec2/public_url",
-
+      "https://www.credly.com/badges/25b81985-766f-4cbe-aafb-61dce4053ec2/public_url",
   },
 ];
 
@@ -49,28 +48,28 @@ export default function Certifications() {
       id="certifications"
       className="relative min-h-screen px-4 pt-28 pb-24 overflow-hidden text-white bg-black"
     >
-      {/* FLOATING LINES — DESKTOP ONLY */}
-      <div className="absolute inset-0 z-0 hidden md:block">
+      {/* FLOATING LINES */}
+      <div className="absolute inset-0 z-0">
         <FloatingLines
           enabledWaves={["top", "middle", "bottom"]}
-          lineCount={[10, 15, 20]}
-          lineDistance={[8, 6, 4]}
-          bendRadius={5.0}
-          bendStrength={-0.5}
-          interactive={true}
-          parallax={true}
+          lineCount={[8, 12, 16]}
+          lineDistance={[10, 8, 6]}
+          bendRadius={4.5}
+          bendStrength={-0.4}
+          interactive={false}
+          parallax={false}
           linesGradient={["#00ff66", "#0a3d2a", "#02160c"]}
         />
       </div>
 
-      {/* DARK OVERLAY */}
-      <div className="absolute inset-0 z-[1] bg-black/70" />
+      {/* OVERLAY */}
+      <div className="absolute inset-0 z-[1] bg-black/50 md:bg-black/70" />
 
       {/* CONTENT */}
       <div className="relative z-20 max-w-6xl mx-auto">
         {/* HEADING */}
         <div className="mb-20 flex justify-center overflow-hidden">
-          <div className="whitespace-nowrap scale-[0.78] sm:scale-100">
+          <div className="whitespace-nowrap scale-[0.85] sm:scale-100">
             <FuzzyText
               fontSize="clamp(2.5rem, 6vw, 3.5rem)"
               fontWeight={900}
@@ -83,7 +82,7 @@ export default function Certifications() {
           </div>
         </div>
 
-        {/* CERTIFICATION CARDS */}
+        {/* CARDS */}
         <motion.div
           className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3"
           initial="hidden"
@@ -92,8 +91,7 @@ export default function Certifications() {
         >
           {certifications.map((cert, index) => (
             <motion.div key={index} variants={cardVariants}>
-              <div className="group relative h-full rounded-[2rem] p-[1px] bg-gradient-to-br from-[#00ff66]/40 via-[#00ff66]/10 to-transparent">
-                <div className="relative h-full rounded-[2rem] bg-black/70 border border-white/10 p-7 flex flex-col transition-all duration-300 group-hover:border-[#00ff66]/40 group-hover:shadow-[0_40px_120px_rgba(0,255,102,0.25)]">
+              <div className="relative h-full rounded-[2rem] p-[1px] bg-gradient-to-br from-[#00ff66]/40 via-[#00ff66]/10 to-transparent">                <div className="relative h-full rounded-[2rem] bg-black/70 border border-white/10 p-7 flex flex-col transition-all duration-300 group-hover:border-[#00ff66]/40 group-hover:shadow-[0_40px_120px_rgba(0,255,102,0.25)]">
                   
                   {/* ICON + ISSUER */}
                   <div className="mb-5 flex items-center gap-3">
@@ -116,16 +114,25 @@ export default function Certifications() {
                     {cert.description}
                   </p>
 
-                  {/* VERIFY BUTTON */}
+                  {/* 🔥 PREMIUM VERIFY BUTTON */}
                   <div className="mt-auto">
                     <a
                       href={cert.verify}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-xs px-5 py-2.5 rounded-full border border-white/10 bg-black/50 hover:bg-[#00ff66]/10 hover:border-[#00ff66]/40 transition"
                     >
-                      View Credential
-                      <ExternalLink className="w-4 h-4" />
+                      <InteractiveHoverButton
+                        className="
+                          border border-[#00ff66]/40
+                          text-white
+                          hover:bg-[#00ff66]
+                          hover:text-black
+                          transition-all duration-300
+                          text-xs px-6 py-2.5
+                        "
+                      >
+                        View Credential
+                      </InteractiveHoverButton>
                     </a>
                   </div>
 
