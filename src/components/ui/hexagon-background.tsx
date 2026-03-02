@@ -31,11 +31,13 @@ function HexagonBackground({
     columns: 0,
   });
 
-  const updateGridDimensions = React.useCallback(() => {
-    const rows = Math.ceil(window.innerHeight / rowSpacing);
-    const columns = Math.ceil(window.innerWidth / hexagonWidth) + 1;
-    setGridDimensions({ rows, columns });
-  }, [rowSpacing, hexagonWidth]);
+const updateGridDimensions = React.useCallback(() => {
+  const fullHeight = document.documentElement.scrollHeight; // 🔥 fix
+  const rows = Math.ceil(fullHeight / rowSpacing) + 2;      // extra rows for safety
+  const columns = Math.ceil(window.innerWidth / hexagonWidth) + 2;
+
+  setGridDimensions({ rows, columns });
+}, [rowSpacing, hexagonWidth]);
 
   React.useEffect(() => {
     updateGridDimensions();

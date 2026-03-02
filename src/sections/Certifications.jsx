@@ -46,50 +46,50 @@ export default function Certifications() {
   return (
     <section
       id="certifications"
-      className="relative min-h-screen overflow-hidden bg-[#050505] text-white"
+      className="relative w-full overflow-hidden bg-[#050505] text-white py-28"
     >
+      {/* HEXAGON BACKGROUND */}
       <HexagonBackground
-  hexagonSize={75}
-  hexagonMargin={3}
-  className="absolute inset-0 z-0 bg-black"
-  hexagonProps={{
-    className:
-      "before:bg-transparent before:border before:border-[#1a1a1a] before:opacity-100 after:bg-black",
-  }}
-/>
+        hexagonSize={75}
+        hexagonMargin={3}
+        className="absolute inset-0 z-0"
+        hexagonProps={{
+          className:
+            "before:bg-transparent before:border before:border-[#1a1a1a] before:opacity-100 after:bg-black",
+        }}
+      />
 
-      {/* LIGHT DEPTH OVERLAY (soft, not killing animation) */}
-      <div className="absolute inset-0 z-10 bg-black/30 pointer-events-none" />
+      {/* OVERLAY */}
+      <div className="absolute inset-0 z-10 bg-black/40 pointer-events-none" />
 
       {/* CONTENT */}
-      <div className="relative z-20 max-w-6xl mx-auto px-4 pt-28 pb-24">
+      <div className="relative z-20 max-w-6xl mx-auto px-4">
+        
         {/* HEADING */}
-        <div className="mb-20 flex justify-center overflow-hidden">
-          <div className="whitespace-nowrap scale-[0.85] sm:scale-100">
-            <FuzzyText
-              fontSize="clamp(2.5rem, 6vw, 3.5rem)"
-              fontWeight={900}
-              color="#00ff66"
-              baseIntensity={0.14}
-              hoverIntensity={0.45}
-            >
-              CERTIFICATIONS
-            </FuzzyText>
-          </div>
+        <div className="mb-20 flex justify-center">
+          <FuzzyText
+            fontSize="clamp(2.5rem, 6vw, 3.5rem)"
+            fontWeight={900}
+            color="#00ff66"
+            baseIntensity={0.14}
+            hoverIntensity={0.45}
+          >
+            CERTIFICATIONS
+          </FuzzyText>
         </div>
 
         {/* CARDS */}
         <motion.div
-          className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3"
+          className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
         >
           {certifications.map((cert, index) => (
             <motion.div key={index} variants={cardVariants}>
-              <div className="relative h-full rounded-[2rem] p-[1px] bg-gradient-to-br from-[#00ff66]/40 via-[#00ff66]/10 to-transparent">
-                <div className="relative h-full rounded-[2rem] bg-black/70 border border-white/10 p-7 flex flex-col transition-all duration-300 hover:border-[#00ff66]/40 hover:shadow-[0_40px_120px_rgba(0,255,102,0.25)]">
-
+              <div className="relative h-full rounded-3xl p-[1px] bg-gradient-to-br from-[#00ff66]/40 via-[#00ff66]/10 to-transparent">
+                <div className="h-full rounded-3xl bg-black/70 border border-white/10 p-7 flex flex-col transition-all duration-300 hover:border-[#00ff66]/40 hover:shadow-[0_30px_100px_rgba(0,255,102,0.25)]">
+                  
                   <div className="mb-5 flex items-center gap-3">
                     <div className="w-11 h-11 rounded-xl bg-[#00ff66]/15 flex items-center justify-center">
                       <ShieldCheck className="w-6 h-6 text-[#00ff66]" />
@@ -100,7 +100,7 @@ export default function Certifications() {
                     </span>
                   </div>
 
-                  <h3 className="text-lg md:text-xl font-semibold mb-3 leading-snug">
+                  <h3 className="text-lg md:text-xl font-semibold mb-3">
                     {cert.title}
                   </h3>
 
