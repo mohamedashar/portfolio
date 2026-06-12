@@ -26,6 +26,21 @@ const projects = [
     tech: ["Computer Vision", "Object Detection", "YOLO"],
     github: "https://github.com/mohamedashar/Drone-Detection-System",
   },
+  {
+  title: "NetGuard: Secure Cloud File Storage System",
+  description:
+    "Developed a secure cloud-based file storage platform with encryption, OTP-based authentication, role-based access control, IP tracking, and security alerts to protect sensitive files from unauthorized access.",
+  tech: [
+    "Python",
+    "Flask",
+    "MySQL",
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Fernet Encryption",
+    "OTP Authentication"
+  ],
+}
 ];
 
 export default function Projects() {
