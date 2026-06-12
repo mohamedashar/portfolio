@@ -59,7 +59,7 @@ export default function Navbar() {
       {/* MAIN GLASS CAPSULE */}
       <div
         className="
-          relative w-full max-w-6xl flex items-center px-4 py-2 lg:px-6 lg:py-3
+          relative w-full max-w-6xl flex items-center px-5 py-2.5 lg:px-6 lg:py-3
           rounded-full
           bg-black/40
           backdrop-blur-[28px] backdrop-saturate-150
@@ -83,7 +83,7 @@ export default function Navbar() {
         <img
           src={logo}
           alt="Ashar"
-          className="relative z-10 h-6 lg:h-8 w-auto drop-shadow-[0_0_8px_rgba(0,255,102,0.25)]"
+          className="relative z-10 h-7 lg:h-8 w-auto drop-shadow-[0_0_8px_rgba(0,255,102,0.25)]"
         />
 
         {/* DESKTOP NAV (ONLY ≥ 1024px) */}
@@ -136,7 +136,7 @@ export default function Navbar() {
           whileTap={{ scale: 0.9 }}
           className="
             relative z-10 lg:hidden ml-auto flex items-center justify-center
-            w-8 h-8 text-base lg:w-10 lg:h-10 lg:text-xl rounded-full text-white
+            w-9 h-9 text-lg lg:w-10 lg:h-10 lg:text-xl rounded-full text-white
             bg-white/[0.04] border border-white/10
             hover:bg-white/[0.08] hover:shadow-[0_0_14px_rgba(0,255,102,0.25)]
             transition-all duration-300
